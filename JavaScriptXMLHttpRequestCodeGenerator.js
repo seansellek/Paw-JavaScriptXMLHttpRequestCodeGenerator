@@ -1,4 +1,4 @@
-var JavaScriptCodeGenerator = function() {
+var JavaScriptXMLHttpRequestCodeGenerator = function() {
     var Mustache = require('./mustache')
     
     this.generate = function(context) {
@@ -27,8 +27,8 @@ var JavaScriptCodeGenerator = function() {
 }
 
 
-JavaScriptCodeGenerator.identifier = "com.seansellek.PawExtensions.JavaScriptCodeGenerator";
-JavaScriptCodeGenerator.title = "JavaScript";
-JavaScriptCodeGenerator.fileExtension = "js";
-JavaScriptCodeGenerator.languageHighlighter = "javascript";
-registerCodeGenerator(JavaScriptCodeGenerator);
+JavaScriptXMLHttpRequestCodeGenerator.identifier = "com.seansellek.PawExtensions.JavaScriptXMLHttpRequestCodeGenerator";
+JavaScriptXMLHttpRequestCodeGenerator.title = "JavaScript (XMLHttpRequest)";
+JavaScriptXMLHttpRequestCodeGenerator.fileExtension = "js";
+JavaScriptXMLHttpRequestCodeGenerator.languageHighlighter = "javascript";
+registerCodeGenerator(JavaScriptXMLHttpRequestCodeGenerator);
