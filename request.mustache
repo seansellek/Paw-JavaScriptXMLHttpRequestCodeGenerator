@@ -1,12 +1,7 @@
 var request = new XMLHttpRequest();
 request.open(
   "{{method}}",
-  "{{{url}}}"{{#basic_auth}},
-  true,
-  {{basic_auth.username}},
-  {{basic_auth.password}},
-  {{/basic_auth}}
-
+  "{{{url}}}"
 )
 
 {{#headers}}
