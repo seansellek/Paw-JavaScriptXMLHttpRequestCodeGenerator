@@ -29,4 +29,10 @@ request.onerror = function (_event) {
   console.error(request.statusText);
 };
 
+{{#body}}
+var body = "{{{body}}}";
+request.send(body);
+{{/body}}
+{{^body}}
 request.send();
+{{/body}}

@@ -8,6 +8,7 @@ var JavaScriptCodeGenerator = function() {
         var view = {
             "method": request.method,
             "url": request.url,
+            "body": request.body.replace(/([^\\])"/g, function(orig, p1) { return p1 + "\\\""; }),
             "headers": function() {
               var headers = request.headers;
               var array = [];
