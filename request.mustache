@@ -1,4 +1,32 @@
-var send_request = function() {
-  request: "{{request}}",
-  content_type: "{{content_type}}"
-}
+var request = new XMLHttpRequest();
+request.open(
+  "{{method}}",
+  "{{{url}}}"{{#basic_auth}},
+  true,
+  {{basic_auth.username}},
+  {{basic_auth.password}},
+  {{/basic_auth}}
+
+)
+
+{{#headers}}
+request.setRequestHeader("{{name}}", "{{{value}}}");
+{{/headers}}
+
+request.onload = function (_event) {
+  if (request.readyState === 4) {
+    if (request.status === 200) {
+      console.log("Request Succeeded!")
+      console.log(request.responseText);
+    } else {
+      console.error(request.statusText);
+    }
+  }
+};
+
+request.onerror = function (_event) {
+  console.log("Request Failed...")
+  console.error(request.statusText);
+};
+
+request.send();
